@@ -8,14 +8,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CardComponent } from './dashboard/card/card.component'
+import { CardComponent } from './dashboard/card/card.component';
+import { HeaderComponent } from './header/header.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    CardComponent
+    CardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
