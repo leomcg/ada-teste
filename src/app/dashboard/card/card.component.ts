@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 import { Card } from 'src/models/card.model';
+import { DashboardService } from '../dashboard.service';
 
 @Component({
   selector: 'card',
@@ -16,30 +18,34 @@ export class CardComponent {
   @Input() frontArrow = true
   @Input() backArrow = true
 
+  constructor(private dashboardService: DashboardService, private apiService: ApiService) {}
 
   moveTaskBack() {
-    console.log('this.cardData-1: ', this.cardData)
-
     if(this.cardData.lista == 'Done') {
-      this.cardData.lista = 'Doing'
+      this.moveCard('Doing')
     } else if(this.cardData.lista == 'Doing') {
-      this.cardData.lista = 'ToDo'
+      this.moveCard('ToDo')
     } 
-    console.log('this.cardData-2: ', this.cardData)
-    // enviar subject
+
+    this.dashboardService.dispacthCardsChanged()
   }
 
   moveTaskForward() {
-    console.log('this.cardData-1: ', this.cardData)
-
     if(this.cardData.lista == 'ToDo') {
-      this.cardData.lista = 'Doing'
+      this.moveCard('Doing')
     } else if(this.cardData.lista == 'Doing') {
-      this.cardData.lista = 'Done'
+      this.moveCard('Done')
     } 
-    console.log('this.cardData-2: ', this.cardData)
 
-    // enviar subject
+    this.dashboardService.dispacthCardsChanged()
+  }
+
+  moveCard(lista: string) {
+    this.apiService.editCard({...this.cardData, lista: lista})
+  }
+
+  deleteCard() {
+    this.apiService.deleteCard(this.cardData.id || '')
   }
 
 

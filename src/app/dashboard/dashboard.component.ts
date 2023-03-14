@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Card } from 'src/models/card.model';
 import { Cards } from 'src/models/cards.model';
 import { ApiService } from '../api.service';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'dashboard',
@@ -10,7 +12,7 @@ import { ApiService } from '../api.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private dashboardService: DashboardService) {}
   
   allCards: Card[] = []
   cards: Cards = {
@@ -18,12 +20,24 @@ export class DashboardComponent implements OnInit {
     doingCards: [],
     doneCards: []
   }
+  cardsChangedSub: Subscription = new Subscription()
 
   ngOnInit() {
     this.getCards()
+    this.handleSubs()
+  }
+  
+  handleSubs() {
+    this.cardsChangedSub = this.dashboardService.onCardsChanged().subscribe(res => {
+      if(res) {
+        this.getCards()
+      }
+    })
   }
 
   getCards() {
+    console.log('getcards')
+    this.clearCards()
     this.apiService.getCards().subscribe((cards: any) => {
       this.allCards = cards
       console.log('cards: ', this.allCards)
@@ -41,5 +55,16 @@ export class DashboardComponent implements OnInit {
         this.cards.doneCards.push(el)
       }
     });
+  }
+
+  clearCards() {
+    this.allCards = []
+    this.cards.toDoCards = []
+    this.cards.doingCards = []
+    this.cards.doneCards = []
+  }
+
+  ngOnDestroy() {
+    this.cardsChangedSub.unsubscribe()
   }
 }

@@ -8,7 +8,7 @@ import { Card } from 'src/models/card.model';
 })
 export class ApiService {
 
-  baseUrl = 'http://localhost:5000/cards'
+  baseUrl = 'http://localhost:5000/cards/'
 
   constructor(private http: HttpClient) { }
 
@@ -27,11 +27,31 @@ export class ApiService {
     return this.http.get(this.baseUrl, this.getHeaders())
   }
 
-  creatCard(card: Card) {
+  createCard(card: Card) {
     return this.http.post(this.baseUrl, card, this.getHeaders())
       .subscribe(
         res => {
           console.log('success create card', res)
+        }, 
+        (err) => console.error(err)
+      )
+  }
+
+  deleteCard(id: string) {
+    return this.http.delete(this.baseUrl + id, this.getHeaders())
+      .subscribe(
+        res => {
+          console.log('success delete card', res)
+        }, 
+        (err) => console.error(err)
+      )
+  }
+
+  editCard(card: Card) {
+    return this.http.put(this.baseUrl + card.id, card, this.getHeaders())
+      .subscribe(
+        res => {
+          console.log('success edit card card', res)
         }, 
         (err) => console.error(err)
       )
