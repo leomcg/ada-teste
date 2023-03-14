@@ -1,4 +1,35 @@
 .overall-containter {
   height: 100vh;
-  background-color: grey !important;
+  background-color: rgb(53, 53, 53) !important;
+}
+
+.cards-box {
+  background-color: #353535;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-container {
+  border: 1px solid ;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  background-color: #505050;
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-bottom: 10px;
+    &.bg-blue {
+      background-color: var(--color-blue);
+    }
+    &.bg-yellow {
+      background-color: var(--color-yellow);
+    }
+    &.bg-green {
+      background-color: var(--color-green);
+    }
+  }
 }
