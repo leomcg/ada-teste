@@ -1,0 +1,25 @@
+<div class="mb-3">
+  <mat-card>
+    <mat-card-content>{{title}}</mat-card-content>
+    <div class="mat-menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>Edit</span>
+        </button>
+      </mat-menu>
+    </div>
+    <div class="card-content">{{content}}</div>
+    <div class="d-flex justify-content-between">
+      <mat-icon (click)="moveTaskBack()" *ngIf="backArrow">arrow_back</mat-icon>
+      <mat-icon (click)="moveTaskForward()" class="arrow-forward" *ngIf="frontArrow">arrow_forward</mat-icon>
+    </div>
+  </mat-card>
+</div>
