@@ -39,7 +39,6 @@ export class DashboardComponent implements OnInit {
         this.cards.doingCards.push(el)
       } else {
         this.cards.doneCards.push(el)
-
       }
     });
   }

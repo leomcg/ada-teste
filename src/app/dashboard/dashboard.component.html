@@ -13,13 +13,13 @@
     </div>
     <div class="row">
       <div class="col-4">
-        <card *ngFor="let card of cards.toDoCards" [title]="card.titulo" [content]="card.conteudo" [backArrow]="false"></card>
+        <card *ngFor="let card of cards.toDoCards" [cardData]="card" [backArrow]="false"></card>
       </div>
       <div class="col-4">
-        <card *ngFor="let card of cards.doingCards" [title]="card.titulo" [content]="card.conteudo"></card>
+        <card *ngFor="let card of cards.doingCards" [cardData]="card"></card>
       </div>
       <div class="col-4">
-        <card *ngFor="let card of cards.doneCards" [title]="card.titulo" [content]="card.conteudo" [frontArrow]="false"></card>
+        <card *ngFor="let card of cards.doneCards" [cardData]="card" [frontArrow]="false"></card>
       </div>
     </div>
   </div>

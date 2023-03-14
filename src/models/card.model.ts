@@ -3,4 +3,5 @@ export interface Card {
     conteudo: string, 
     lista: string,
     id?: string,
+
 }
