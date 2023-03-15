@@ -1,8 +1,5 @@
-.overall-container {
-  
-  .card-title {
-    
-  }
+::ng-deep mat-card {
+  height: 200px;
 }
 
 .mat-menu {
@@ -11,6 +8,32 @@
   right: 0;
 }
 
+.arrow-back {
+  position: absolute;
+  bottom: 16px;
+  left: 8px;
+  cursor: pointer;
+}
+
 .arrow-forward {
-  justify-self: end 
+  position: absolute;
+  bottom: 16px;
+  right: 8px;
+  cursor: pointer;
+}
+
+.title-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  width: 92%;
+}
+
+.card-content {
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 16px;
+  color: grey;
 }

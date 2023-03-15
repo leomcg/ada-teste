@@ -3,22 +3,22 @@
     <div class="row cards-box">
       <div class="col-4">
         <div class="card-container">
-          <div class="title-container bg-blue">To do</div>
-          <span *ngIf="!cards.toDoCards.length">Nenhuma Tarefa</span>
+          <div class="title-container mb-3 fw-bold bg-blue">To do</div>
+          <p class="text-center text-uppercase" *ngIf="!cards.toDoCards.length">no tasks</p>
           <card *ngFor="let card of cards.toDoCards" [cardData]="card" [backArrow]="false"></card>
         </div>
       </div>
       <div class="col-4">
         <div class="card-container">
-          <div class="title-container bg-yellow">Doing</div>
-          <span *ngIf="!cards.doingCards.length">Nenhuma Tarefa</span>
+          <div class="title-container mb-3 fw-bold bg-yellow">Doing</div>
+          <p class="text-center text-uppercase" *ngIf="!cards.doingCards.length">no tasks</p>
           <card *ngFor="let card of cards.doingCards" [cardData]="card"></card>
         </div>
       </div>
       <div class="col-4">
         <div class="card-container">
-          <div class="title-container bg-green">Done</div>
-          <span *ngIf="!cards.doneCards.length">Nenhuma Tarefa</span>
+          <div class="title-container mb-3 fw-bold bg-green">Done</div>
+          <p class="text-center text-uppercase" *ngIf="!cards.doneCards.length">no tasks</p>
           <card *ngFor="let card of cards.doneCards" [cardData]="card" [frontArrow]="false"></card>
         </div>
       </div>

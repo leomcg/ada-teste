@@ -21,8 +21,8 @@
     align-items: center;
     justify-content: center;
     height: 50px;
-    margin-bottom: 10px;
     text-transform: uppercase;
+    border-radius: 5px;
     &.bg-blue {
       background-color: var(--color-blue);
     }
