@@ -4,11 +4,11 @@ Como eram apenas 3 colunas e o tempo era curto, foi o que consegui pensar na hor
 
 
 ## Rodando o projeto
-1. Caso não tenha o Angular instalado: 
-npm install -g @angular/cli
+1. Caso não tenha o Angular instalado:    
+npm install -g @angular/cli  
 
-2. Na raíz do projeto rode os comandos:
-npm install
-ng serve
+2. Na raíz do projeto rode os comandos:  
+npm install  
+ng serve  
 
-3. O front estará rodando na porta 4200
+3. O front estará rodando na porta 4200  
