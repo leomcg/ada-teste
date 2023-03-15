@@ -41,7 +41,12 @@ export class ApiService {
             duration: 1700
           });
         }, 
-        (err) => console.error(err)
+        (err) => {
+          console.error(err)
+          this.snackBar.open('Ops, algo deu errado', '', {
+            duration: 2000
+          });
+        }
       )
   }
 
@@ -53,7 +58,12 @@ export class ApiService {
             duration: 1700
           });
         }, 
-        (err) => console.error(err)
+        (err) => {
+          console.error(err)
+          this.snackBar.open('Ops, algo deu errado', '', {
+            duration: 2000
+          });
+        }
       )
   }
 
@@ -67,7 +77,12 @@ export class ApiService {
             });
           }
         }, 
-        (err) => console.error(err)
+        (err) => {
+          console.error(err)
+          this.snackBar.open('Ops, algo deu errado', '', {
+            duration: 2000
+          });
+        }
       )
   }
 }
