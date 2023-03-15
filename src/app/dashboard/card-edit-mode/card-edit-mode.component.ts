@@ -15,6 +15,13 @@ export class CardEditModeComponent {
 
   constructor(private apiService: ApiService, private dashboardService: DashboardService) { }
 
+  ngOnChanges() {
+    if(this.cardData) {
+      this.title = this.cardData.titulo
+      this.content = this.cardData.conteudo
+    }
+  }
+
   cancelEdit() {
     this.editCancelled.emit()
   }
@@ -25,7 +32,7 @@ export class CardEditModeComponent {
       titulo: this.title,
       conteudo: this.content,
     }
-    this.apiService.editCard(cardData)
+    this.apiService.editCard(cardData, true)
     this.cancelEdit();
     this.dashboardService.dispacthCardsChanged()
   }

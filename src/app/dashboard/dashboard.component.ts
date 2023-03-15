@@ -36,11 +36,9 @@ export class DashboardComponent implements OnInit {
   }
 
   getCards() {
-    console.log('getcards')
     this.clearCards()
     this.apiService.getCards().subscribe((cards: any) => {
       this.allCards = cards
-      console.log('cards: ', this.allCards)
       this.separateCards()
     })
   }

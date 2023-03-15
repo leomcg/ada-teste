@@ -20,8 +20,6 @@ export class CreateCardModalComponent {
       conteudo: this.content,
       lista: 'ToDo'
     }
-
-    console.log('content: ', this.content)
     this.apiService.createCard(cardData)
   }
   
