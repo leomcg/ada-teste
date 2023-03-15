@@ -1,5 +1,5 @@
-::ng-deep mat-card {
-  height: 200px;
+.content-card ::ng-deep mat-card  {
+  height: 240px;
 }
 
 .mat-menu {
@@ -11,15 +11,17 @@
 .arrow-back {
   position: absolute;
   bottom: 16px;
-  left: 8px;
+  left: 16px;
   cursor: pointer;
+  font-size: 30px;
 }
 
 .arrow-forward {
   position: absolute;
   bottom: 16px;
-  right: 8px;
+  right: 16px;
   cursor: pointer;
+  font-size: 30px;
 }
 
 .title-content {
@@ -31,7 +33,7 @@
 }
 
 .card-content {
-  height: 100px;
+  height: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 16px;

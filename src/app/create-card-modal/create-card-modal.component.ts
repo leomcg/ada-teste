@@ -28,9 +28,5 @@ export class CreateCardModalComponent {
   closeDialog() {
     this.dialogRef.close();
   }
-
-  ngOnDestroy() {
-
-  }
   
 }

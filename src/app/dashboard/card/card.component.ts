@@ -17,6 +17,7 @@ export class CardComponent {
   }
   @Input() frontArrow = true
   @Input() backArrow = true
+  editMode = false
 
   constructor(private dashboardService: DashboardService, private apiService: ApiService) {}
 
@@ -45,7 +46,10 @@ export class CardComponent {
   }
 
   deleteCard() {
-    this.apiService.deleteCard(this.cardData.id || '')
+    if(window.confirm('Tem certeza que deseja excluir esta tarefa?')){
+      this.apiService.deleteCard(this.cardData.id || '')
+    }
+    this.dashboardService.dispacthCardsChanged()
   }
 
 

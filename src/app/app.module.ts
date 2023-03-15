@@ -15,6 +15,7 @@ import { CardComponent } from './dashboard/card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateCardModalComponent } from './create-card-modal/create-card-modal.component'
 import { FormsModule } from '@angular/forms';
+import { CardEditModeComponent } from './dashboard/card-edit-mode/card-edit-mode.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     CardComponent,
     HeaderComponent,
-    CreateCardModalComponent
+    CreateCardModalComponent,
+    CardEditModeComponent
   ],
   imports: [
     BrowserModule,

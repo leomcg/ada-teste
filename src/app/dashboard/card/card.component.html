@@ -1,18 +1,18 @@
-<div class="mb-3">
-  <mat-card>
+<div class="content-card mb-3">
+  <mat-card *ngIf="!editMode; else editModeTemplate">
     <mat-card-content class="title-content">{{cardData.titulo}}</mat-card-content>
     <div class="mat-menu">
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="editMode = true">
+          <mat-icon>edit</mat-icon>
+          <span>Edit</span>
+        </button>
         <button mat-menu-item (click)="deleteCard()">
           <mat-icon>delete</mat-icon>
           <span>Delete</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>edit</mat-icon>
-          <span>Edit</span>
         </button>
       </mat-menu>
     </div>
@@ -20,4 +20,7 @@
     <mat-icon (click)="moveTaskBack()" class="arrow-back" *ngIf="backArrow">arrow_back</mat-icon>
     <mat-icon (click)="moveTaskForward()" class="arrow-forward" *ngIf="frontArrow">arrow_forward</mat-icon>
   </mat-card>
+  <ng-template #editModeTemplate>
+    <card-edit-mode [cardData]="cardData" (editCancelled)="editMode = false"></card-edit-mode>
+  </ng-template>
 </div>

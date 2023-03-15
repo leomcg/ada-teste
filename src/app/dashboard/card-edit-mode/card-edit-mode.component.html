@@ -1,0 +1,14 @@
+<mat-card>
+  <div class="m-3">
+    <mat-form-field appearance="fill" class="w-100">
+      <input cdkFocusInitial matInput [(ngModel)]="title" placeholder="Título">
+    </mat-form-field>
+    <mat-form-field appearance="fill"  class="w-100">
+      <textarea matInput [(ngModel)]="content" class="w-100 text-area text-area" placeholder="Conteúdo"></textarea>
+    </mat-form-field>
+    <div class="w-100 d-flex justify-content-between">
+      <button class="text-uppercase" mat-button color="warn" (click)="cancelEdit()">Cancelar</button>
+      <button class="text-uppercase" mat-button color="primary" [disabled]="!title.length || !content.length" (click)="onSendData()" [mat-dialog-close]="'hello'">Ok</button>
+    </div>
+  </div>
+</mat-card>
