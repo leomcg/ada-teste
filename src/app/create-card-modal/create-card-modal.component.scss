@@ -1,0 +1,10 @@
+.text-area {
+  height:  200px !important;
+  resize: none;
+}
+
+::ng-deep mat-form-field {
+  .mat-mdc-input-element {
+    width: 100%;
+  }
+}

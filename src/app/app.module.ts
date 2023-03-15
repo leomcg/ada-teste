@@ -7,9 +7,14 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardComponent } from './dashboard/card/card.component';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { CreateCardModalComponent } from './create-card-modal/create-card-modal.component'
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +22,8 @@ import { HeaderComponent } from './header/header.component'
     AppComponent,
     DashboardComponent,
     CardComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateCardModalComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +33,10 @@ import { HeaderComponent } from './header/header.component'
     HttpClientModule,
     MatCardModule,
     MatMenuModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
 ],
   providers: [],
   bootstrap: [AppComponent]

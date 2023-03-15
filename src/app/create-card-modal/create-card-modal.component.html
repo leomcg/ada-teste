@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Criar nova tarefa</h1>
+<div mat-dialog-content>
+  <p class="mb-0">Título</p>
+  <mat-form-field appearance="fill" class="w-100">
+    <input matInput [(ngModel)]="title">
+    <mat-error *ngIf="true">erro</mat-error>
+  </mat-form-field>
+  <p class="mb-0">Conteúdo</p>
+  <mat-form-field appearance="fill"  class="w-100">
+    <textarea matInput [(ngModel)]="content" class="w-100 text-area"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions  class="w-100 d-flex justify-content-between">
+  <button class="text-uppercase ms-5" mat-raised-button color="warn" (click)="closeDialog()">Cancelar</button>
+  <button class="text-uppercase me-5" mat-raised-button color="primary" [disabled]="!title.length || !content.length" (click)="onSendData()" [mat-dialog-close]="'hello'" cdkFocusInitial>Ok</button>
+</div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Card } from 'src/models/card.model';
+import { DashboardService } from './dashboard/dashboard.service';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ export class ApiService {
 
   baseUrl = 'http://localhost:5000/cards/'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private dashboardService: DashboardService) { }
 
 
   getHeaders() {
@@ -31,7 +32,7 @@ export class ApiService {
     return this.http.post(this.baseUrl, card, this.getHeaders())
       .subscribe(
         res => {
-          console.log('success create card', res)
+          this.dashboardService.dispacthCardsChanged()
         }, 
         (err) => console.error(err)
       )

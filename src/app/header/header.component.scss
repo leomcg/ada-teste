@@ -9,16 +9,21 @@
     height: 40px;
     margin-left: 8px;
   }
-}
+  .create-button {
+    position: absolute;
+    right: 16px;
+    top:12px;
+  }
 
-.header-bar {
-  width: 3px;
-  height: 30px;
-  top: 10px;
-  background-color: #bababa;
-  margin: 0 20px;
-}
-
-.header-title {
-  color: #fff
+  .header-bar {
+    width: 3px;
+    height: 30px;
+    top: 10px;
+    background-color: #bababa;
+    margin: 0 20px;
+  }
+  
+  .header-title {
+    color: #fff
+  }
 }
