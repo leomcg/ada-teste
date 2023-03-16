@@ -1,11 +1,11 @@
 .overall-containter {
   height: calc(100vh - 60px);
-  background-image: linear-gradient(to top, #181c23, #383a40, #5b5c60, #808082, #a6a6a6);
+  background-image: linear-gradient(to top, #181c23, #004e67, #00898e, #00c484, #a6f750);
   padding: 20px 0;
 }
 
 .cards-box {
-  background-color: #808080;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
 }
@@ -17,9 +17,9 @@
 .card-container {
   border: 1px solid ;
   padding: 10px;
-  border: 1px solid grey;
+  border: none;
   border-radius: 8px;
-  background-color: #dadada;
+  background-color: rgba(250, 250, 250, 0.3);
   overflow-y: auto;
   height: calc(100vh - 140px);
   &::-webkit-scrollbar {
